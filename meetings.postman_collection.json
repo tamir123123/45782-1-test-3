@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "b8b49b87-8ad6-484b-9aaf-4fff3c6b3dc2",
+		"name": "meetings",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37910032"
+	},
+	"item": [
+		{
+			"name": "get teams",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "new meeting",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"team_code\": \"110e8400-e29b-41d4-a716-446655440000\",\n    \"start_time\": \"2025-12-01T14:00:00.000Z\",\n    \"end_time\": \"2025-12-01T15:00:00.000Z\",\n    \"description\": \"Planning Session for Q1 2026\",\n    \"room\": \"Main Boardroom\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/meetings",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"meetings"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "team meetings",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/teams/7c20c5a0-5e58-4b76-8b45-1c7a4023f05d/meetings\n",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"teams",
+						"7c20c5a0-5e58-4b76-8b45-1c7a4023f05d",
+						"meetings\n"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
